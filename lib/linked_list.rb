@@ -54,4 +54,14 @@ class LinkedList
     end
     @size -= 1
   end
+
+  def contains?(value)
+    i = 0
+    while i < @size
+      return true if at(i).value == value
+
+      i += 1
+    end
+    false
+  end
 end
