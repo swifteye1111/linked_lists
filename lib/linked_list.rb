@@ -74,4 +74,15 @@ class LinkedList
     end
     nil
   end
+
+  def to_s
+    str = ''
+    current = head
+    while current.next_node
+      str += "( #{current.value} ) -> "
+      current = current.next_node
+    end
+    str += 'nil'
+    str
+  end
 end
