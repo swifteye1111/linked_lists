@@ -85,4 +85,14 @@ class LinkedList
     str += 'nil'
     str
   end
+
+  def insert_at(value, index)
+    nil if index >= @size
+
+    node_before = at(index - 1)
+    node_after = node_before.next_node
+    new_node = Node.new(value, node_after)
+    node_before.next_node = new_node
+    @size += 1
+  end
 end
