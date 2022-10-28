@@ -43,5 +43,15 @@ class LinkedList
     end
     current
   end
-end
 
+  def pop
+    if tail.nil?
+      self.head = nil
+    else
+      current = head
+      current = current.next_node until current.next_node == tail
+      self.tail = current
+    end
+    @size -= 1
+  end
+end
