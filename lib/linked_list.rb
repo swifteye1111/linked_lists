@@ -64,4 +64,14 @@ class LinkedList
     end
     false
   end
+
+  def find(value)
+    i = 0
+    while i < @size
+      return i if at(i).value == value
+
+      i += 1
+    end
+    nil
+  end
 end
