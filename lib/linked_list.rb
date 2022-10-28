@@ -5,6 +5,7 @@ require_relative './node'
 # Linked list class.
 class LinkedList
   attr_accessor :head, :tail
+  attr_reader :size
 
   def initialize
     @size = 0
@@ -33,8 +34,14 @@ class LinkedList
     @size += 1
   end
 
-  def size
-    @size
+  def at(index)
+    i = 0
+    current = head
+    while i < index
+      current = current.next_node
+      i += 1
+    end
+    current
   end
 end
 
