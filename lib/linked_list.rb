@@ -95,4 +95,13 @@ class LinkedList
     node_before.next_node = new_node
     @size += 1
   end
+
+  def remove_at(index)
+    nil if index >= @size
+
+    node_before = at(index - 1)
+    node_after = at(index + 1)
+    node_before.next_node = node_after
+    @size -= 1
+  end
 end
